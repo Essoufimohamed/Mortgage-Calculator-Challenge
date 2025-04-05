@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            href="images/favicon-32x32.png"
+            type="image/x-icon"
+        />
+        <title>Mortgage Calculator</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="calculator">
+            <div class="container">
+                <div class="left">
+                    <div class="header-title">
+                        <h2>Mortgage Calculator</h2>
+                        <span id="clear">Clear All</span>
+                    </div>
+                    <div class="mortagege-amount">
+                        <h3>Mortgage Amount</h3>
+                        <div class="inputContainer">
+                            <span>£</span>
+                            <input id="mortgageAmount" type="number" required />
+                        </div>
+                        <p class="error">This field is required</p>
+                    </div>
+                    <div class="termAndRate">
+                        <div class="box">
+                            <h3>Mortgage Term</h3>
+                            <div class="inputContainer">
+                                <input
+                                    id="mortgageYears"
+                                    type="number"
+                                    required
+                                />
+                                <span>Years</span>
+                            </div>
+                            <p class="error">This field is required</p>
+                        </div>
+                        <div class="box">
+                            <h3>Interest Rate</h3>
+                            <div class="inputContainer">
+                                <input
+                                    id="mortgagePersentage"
+                                    type="number"
+                                    required
+                                />
+                                <span>%</span>
+                            </div>
+                            <p class="error">This field is required</p>
+                        </div>
+                    </div>
+                    <div class="cheacked">
+                        <h3>Mortgage Type</h3>
+                        <div class="check">
+                            <input type="radio" name="type" id="repayment" />
+                            <label for="repayment">repayment</label>
+                        </div>
+                        <div class="check">
+                            <input type="radio" name="type" id="interest" />
+                            <label for="interest">interest</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="mortgagecalcul()">
+                        <a href="#"
+                            ><i class="fa-solid fa-calculator"></i> Calculate
+                            Repayement</a
+                        >
+                    </button>
+                </div>
+                <div class="right">
+                    <div class="empty-container" id="empty-container">
+                        <img src="/images/illustration-empty.svg" alt="" />
+                        <div class="content">
+                            <h2>Results shown here</h2>
+                            <p>
+                                Complete the form and click "calculate
+                                repayments" to see what your monthly repayments
+                                would be.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="complete-container" id="complete-container">
+                        <h2>Your Results</h2>
+                        <p>
+                            Your results are shown below based on the
+                            information you provided. To adjust the results,
+                            edit the form and click "calculate repayments"
+                            again.
+                        </p>
+                        <div class="results">
+                            <div class="box">
+                                <h3>Your monthly repayements</h3>
+                                <div class="monthly-repaye" id="monthly-repaye">
+                                    £1,798.74
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="box">
+                                <h3>Total you'll repay over the term</h3>
+                                <div class="over-time" id="over-time">
+                                    £51,698.74
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

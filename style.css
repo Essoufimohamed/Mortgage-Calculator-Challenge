@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+:root{
+    --primary-color : #133040;
+    --second-color : #D9DB2F;
+    --third-color :hsl(200, 24%, 40%);
+    --fourth-color : hsl(202, 86%, 94%);
+    --dark-color : #0b1e29;
+    
+}
+.calculator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(202, 86%, 94%);
+}
+.container{
+    background-color: #fff;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* height: 80vh; */
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+
+    .left{
+        max-width: 100%;
+        padding: 35px 25px;
+        /* height: 100vh; */
+
+        .header-title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            h2{
+                color: var(--primary-color);
+            }
+            #clear{
+                color: var(--third-color);
+                cursor: pointer;
+            }
+        }
+            h3{
+                font-weight: 500;
+                font-size: 18px;
+                color: var(--primary-color);
+                margin-bottom: 10px;
+        }
+        .mortagege-amount{
+            margin-bottom: 20px;
+            .inputContainer{
+                width: 100%;height: 40px;
+                position: relative;
+                border-radius: 6px;
+                border: 1px solid var(--third-color);
+                overflow: hidden;
+
+                span{
+                    text-align: center;
+                    line-height: 40px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 40px;
+                    background-color: var(--fourth-color);
+                    color: var(--third-color);
+                    font-weight: 600;
+                    z-index: 3;
+                    border-radius: 6px 0 0 6px;
+                }
+            }
+            input{
+                width: 100%;
+                font-size: 16px;
+                font-weight: 600;
+                padding: 10px 10px 10px 50px;
+                /* position: relative; */
+                border: none;
+                outline: none;
+            }
+            input::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                
+                /* z-index: 99; */
+            }
+        }
+        .termAndRate{
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+
+                .box{
+                    width: 50%;
+
+                    .inputContainer{
+                        border: 1px solid var(--third-color);
+                        border-radius: 6px;
+                        position: relative;
+                        overflow: hidden;
+                        input{
+                            width: 100%;
+                            height: 40px;
+                            padding: 10px;
+                            font-size: 16px;
+                            font-weight: 600;
+                            border: none;
+                            outline: none;
+                        }
+                        span{
+                            position: absolute;
+                            right: 0;
+                            top: 0;bottom: 0;
+                            background-color: var(--fourth-color);
+                            color: var(--third-color);
+                            padding: 4px 10px;
+                            font-weight: 600;
+                            line-height: 1.7;
+                        }
+                    }
+                }
+        } 
+        .cheacked{
+            margin-bottom: 20px;
+                .check {
+                    border: 1px solid var(--third-color);
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 6px;
+                    margin-bottom: 10px;
+                    /* font-size: 40px; */
+
+                    input[type=radio] {
+                        appearance: none;
+                        border: 1px solid var(--third-color);
+                        width: 18px;
+                        height: 18px;
+                        border-radius: 50%;
+                        outline: none;
+                    }
+                    input[type='radio']:checked {
+                        background-color: var(--second-color);
+                    }
+                    
+                    label{
+                        text-transform: capitalize;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                    }
+                }
+                .check:has(input:checked) {
+                    background-color: #ebee3133;
+                }
+                
+        }
+        .inputContainer:has(input:focus),
+        .box .inputContainer:has(input:focus){
+            border: 1px solid var(--second-color);
+            span{
+                background-color: var(--second-color);
+            }
+        }
+        .btn{
+            border: none;
+            margin-top: 15px;
+            background-color: transparent;
+            a{
+                color: var(--primary-color);
+                background-color: var(--second-color);
+                padding: 12px 30px;
+                border-radius: 25px;
+                font-size: 16px;
+                text-decoration: none;
+                font-weight: 600;
+                display: block;
+            }
+        }
+    }
+    .right{
+        max-width: 100%;
+        background-color: var(--primary-color);
+        border-radius: 0 20px 20px 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+    }
+        .empty-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            img{
+                max-width: 300px;
+            }
+            .content{
+                padding: 10px;
+                h2{
+                    color: #fff;
+                    margin-bottom: 10px;
+                }
+                p{
+                    color: #ddd;
+                }
+            }
+        }
+        
+        .complete-container{
+            display: none;
+            h2{
+                color: #fff;
+                margin-bottom: 15px;
+            }
+            p{
+                color:#ccc;
+                margin-bottom: 15px;
+            }
+
+            .results{
+                background-color:var(--dark-color) ;
+                padding: 20px;
+                border-radius: 10px;
+                border-top: 3px solid var(--second-color);
+
+                .box{
+                    padding: 15px 10px;
+                    h3{
+                        color: #fff;
+                        font-weight: 100;
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                    }
+                    .monthly-repaye{
+                        color:var(--second-color);
+                        font-size: 3rem;
+                        font-weight: bold;
+                    }
+                    .over-time{
+                        color: #fff;
+                        font-weight: 600;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+        .error{
+            display: none;
+            margin-top: 8px;
+            color: red;
+            font-size: 14px;
+        }
+}
+
+@media (min-width:1200px) {
+    .container{
+        max-width: 1180px;
+    }
+}
+@media (max-width:768px) {
+    .calculator{
+        height: auto;
+    }
+    .container{
+        width: 98%;
+        grid-template-columns: 1fr;
+        /* height: 80vh; */
+        box-shadow: none;
+        border-radius: 0;
+        overflow: hidden;
+    
+        .left{
+            max-width: 100%;
+            padding: 35px 25px;
+            /* height: 100vh; */
+    
+            .header-title{
+                justify-content: unset;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .mortagege-amount{
+                .inputContainer{
+                    width: 100%;height: 40px;
+                    position: relative;
+                    border-radius: 6px;
+                    border: 1px solid var(--third-color);
+                    overflow: hidden;
+    
+                    span{
+                        text-align: center;
+                        line-height: 40PX;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        width: 40px;
+                        background-color: var(--fourth-color);
+                        color: var(--third-color);
+                        font-weight: 600;
+                        z-index: 3;
+                        border-radius: 6px 0 0 6px;
+                    }
+                }
+                input{
+                    width: 100%;
+                    font-size: 16px;
+                    padding: 10px 10px 10px 50px;
+                    position: relative;
+                    border: none;
+                    outline: none;
+                }
+                input::before{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    
+                    /* z-index: 99; */
+                }
+            }
+            .termAndRate{
+                flex-direction: column;
+                    .box{
+                        width: 100%;
+    
+                        .inputContainer{
+                            
+                            input{
+                                width: 100%;
+                            }
+                        }
+                    }
+            } 
+    
+            .btn{
+                display: block;
+                margin: 15px auto;
+            }
+        }
+        .right{
+            border-radius: 0;
+        }
+            .empty-container{
+                .content{
+                    padding: 10px;
+                    h2{
+                        font-size: 1.5rem;
+                    }
+                    p{
+                        color: #ddd;
+                    }
+                }
+            }
+        
+    }
+}
